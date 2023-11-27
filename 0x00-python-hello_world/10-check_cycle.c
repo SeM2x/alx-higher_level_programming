@@ -24,7 +24,7 @@ int check_cycle(listint_t *list)
 {
     listint_t *tmp = list;
     size_t size = 0;
-    listint_t **visited = malloc(1000 * sizeof(listint_t *));
+    listint_t **visited = malloc(100 * sizeof(listint_t *));
 
     while (tmp)
     {
