@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def add_tuple(tuple_a=(), tuple_b=()):
     new = ()
     max_length = max(len(tuple_a), len(tuple_b))
