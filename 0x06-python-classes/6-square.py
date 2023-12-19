@@ -5,7 +5,7 @@
 class Square:
     """Represents a square"""
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize a square instance"""
         self.size = size
         self.position = position
@@ -14,6 +14,7 @@ class Square:
     def size(self):
         """returns the private attribute size"""
         return self.__size
+
     @property
     def position(self):
         """returns the private attribute position"""
