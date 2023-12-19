@@ -5,7 +5,7 @@
 
 class Node:
     """Represents a Node"""
-    
+
     def __init__(self, data, next_node=None):
         """initialized a Node instance"""
 
@@ -20,7 +20,7 @@ class Node:
     @data.setter
     def data(self, value):
         """selt data to value"""
-        
+
         if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
@@ -35,12 +35,13 @@ class Node:
         """selt next_node to value"""
 
         if value is not None and not isinstance(value, Node):
-            raise TypeError("next_node must be a Node object") 
+            raise TypeError("next_node must be a Node object")
         self.__next_node = value
+
 
 class SinglyLinkedList:
     """Represents a SinglyLinkedList"""
-    
+
     def __init__(self):
         """initialized a SinglyLinkedList instance"""
         self.__head = None
@@ -50,7 +51,7 @@ class SinglyLinkedList:
 
         string = ""
         node = self.__head
-        while(node is not None):
+        while (node is not None):
             string += str(node.data)
             if node.next_node is not None:
                 string += '\n'
@@ -61,7 +62,7 @@ class SinglyLinkedList:
         """inserts a node in the sorted list"""
 
         node = Node(value)
-        if self.__head == None:
+        if self.__head is None:
             self.__head = node
         else:
             if self.__head.data > node.data:
@@ -69,9 +70,9 @@ class SinglyLinkedList:
                 self.__head = node
             else:
                 tail = self.__head
-                while (tail.next_node is not None and 
-                    tail.next_node.data < node.data):
-                        tail = tail.next_node
-    
+                while (tail.next_node is not None
+                        and tail.next_node.data < node.data):
+                    tail = tail.next_node
+
                 node.next_node = tail.next_node
                 tail.next_node = node
