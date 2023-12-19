@@ -15,7 +15,7 @@ class Square:
         """returns the private attribute size"""
 
         return self.__size
-    
+
     @size.setter
     def size(self, value):
         """sets size to value"""
