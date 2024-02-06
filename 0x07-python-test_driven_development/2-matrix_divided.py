@@ -26,7 +26,7 @@ def matrix_divided(matrix, div):
         if (i > 0 and len(matrix[i]) != len(matrix[i - 1])):
             raise TypeError("Each row of the matrix must have the same size")
         if not all(isinstance(x, (int, float)) for x in matrix[i]):
-            raise TypeError("matrix must be a matrix"
+            raise TypeError("matrix must be a matrix "
                             "(list of lists) of integers/floats")
 
         new += [[round(x / div, 2) for x in matrix[i]]]
