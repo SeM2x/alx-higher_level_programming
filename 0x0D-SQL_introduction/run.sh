@@ -1,1 +1,1 @@
-cat $1 | mysql -hlocalhost -uroot -p
+cat $1 | mysql -hlocalhost -uroot -p $2
