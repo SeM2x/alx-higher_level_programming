@@ -60,5 +60,3 @@ class Rectangle:
             int: The perimeter of the rectangle.
         """
         return 2 * (width + height)
-
-
