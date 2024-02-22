@@ -19,9 +19,10 @@ class Rectangle:
         """Returns tyhe string representation of the rectangle."""
         rectangle = ''
         for i in range(self.height):
-            for i in range(self.width):
+            for j in range(self.width):
                 rectangle += '#'
-            rectangle += '\n'
+            if i != self.height - 1:
+                rectangle += '\n'
         return rectangle
 
     @property
