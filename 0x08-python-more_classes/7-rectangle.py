@@ -28,7 +28,7 @@ class Rectangle:
         i = j = 0
         for i in range(self.height):
             for j in range(self.width):
-                rectangle += Rectangle.print_symbol
+                rectangle += self.print_symbol
             if i != self.height - 1 and j != 0:
                 rectangle += '\n'
         return rectangle
