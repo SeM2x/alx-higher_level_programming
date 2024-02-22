@@ -17,7 +17,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __str__(self):
         """Returns the string representation of the rectangle that
@@ -41,7 +41,7 @@ class Rectangle:
     def __del__(self):
         """prints a string when the instance is deleted"""
         print('Bye rectangle...')
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
 
     @property
     def width(self):
