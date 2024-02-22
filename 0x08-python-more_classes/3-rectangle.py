@@ -18,10 +18,11 @@ class Rectangle:
     def __str__(self):
         """Returns tyhe string representation of the rectangle."""
         rectangle = ''
+        i = j = 0
         for i in range(self.height):
             for j in range(self.width):
                 rectangle += '#'
-            if i != self.height - 1:
+            if i != self.height - 1 and j != 0:
                 rectangle += '\n'
         return rectangle
 
