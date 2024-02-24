@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""Defines a class that inhertis from list"""
+"""Defines a function that checks if an object in instance of a class"""
 
-
-class MyList(list):
-    """class that inhertis from list."""
-    def print_sorted(self):
-        """prints the sorted list."""
-        print(sorted(self))
+def is_same_class(obj, a_class):
+    """returns True if the object is exactly an instance
+    of the specified class ; otherwise False.
+    """
+    return isinstance(obj, a_class)
