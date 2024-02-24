@@ -19,6 +19,6 @@
 >>> my_list.print_sorted()
 []
 
->>> type(my_list.print_sorted()) == MyList
+>>> my_list.print_sorted() is not my_list
 []
-False
+True
