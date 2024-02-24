@@ -18,3 +18,7 @@
 >>> my_list = MyList()
 >>> my_list.print_sorted()
 []
+
+>>> type(my_list.print_sorted()) == MyList
+[]
+False
