@@ -26,6 +26,7 @@ class Student:
         Returns:
             dict: dict representaion of an object
         """
-        if (attrs):
-            return {key: value for key, value in self.__dict__.items() if key in attrs}
+        if (isinstance(attrs, list)):
+            return {key: value for key, value in self.__dict__.items()
+                    if key in attrs}
         return self.__dict__
