@@ -7,8 +7,6 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 _list = []
 filename = 'add_item.json'
 try:
-    with open(filename, 'r') as f:
-        pass
     _list = load_from_json_file(filename)
 except FileNotFoundError:
     pass
