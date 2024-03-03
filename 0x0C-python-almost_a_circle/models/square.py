@@ -43,3 +43,18 @@ class Square(Rectangle):
             attrs = ['id', 'size', 'x', 'y']
             for i, val in enumerate(args):
                 setattr(self, attrs[i], val)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Square
+
+        Returns:
+            dict: the sdictionary representation of a Square
+        """
+        new_dict = {}
+        for key, val in self.__dict__.items():
+            key = key.replace('_Rectangle__', '')
+            if key == 'width' or key == 'height':
+                new_dict['size'] = val
+            else:
+                new_dict[key] = val
+        return new_dict
