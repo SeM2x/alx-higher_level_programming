@@ -68,8 +68,21 @@ class Base:
             object: a Base instance
         """
         if cls.__name__ == 'Square':
-            instance = cls(1, 0)
+            instance = cls(1)
         else:
             instance = cls(1, 1)
         instance.update(**dictionary)
         return instance
+
+    @classmethod
+    def load_from_file(cls):
+        try:
+            with open(f'{cls.__name__}.json', 'r') as f:
+                json_string = f.read()
+        except FileNotFoundError:
+            return []
+        objs = []
+        for obj in cls.from_json_string(json_string):
+            objs += [cls.create(**obj)]
+
+        return objs
