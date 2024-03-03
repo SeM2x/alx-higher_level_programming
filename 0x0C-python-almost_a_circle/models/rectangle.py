@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """defines a Rectangle class"""
-from base import Base
+from .base import Base
 
 
 class Rectangle(Base):
@@ -89,4 +89,3 @@ class Rectangle(Base):
             y (int): y of the Rectangle
         """
         self.__y = y
-
