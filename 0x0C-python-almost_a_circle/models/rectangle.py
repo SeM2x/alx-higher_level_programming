@@ -138,3 +138,14 @@ class Rectangle(Base):
             attrs = ['id', 'width', 'height', 'x', 'y']
             for i, val in enumerate(args):
                 setattr(self, attrs[i], val)
+
+    def to_dictionary(self):
+        """returns the dictionary representation of a Rectangle
+
+        Returns:
+            dict: the sdictionary representation of a Rectangle
+        """
+        new_dict = {}
+        for key, val in self.__dict__.items():
+            new_dict[key.replace('_Rectangle__', '')] = val
+        return new_dict
