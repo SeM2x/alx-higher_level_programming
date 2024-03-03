@@ -67,6 +67,9 @@ class Base:
         Returns:
             object: a Base instance
         """
-        instance = cls(1, 1)
+        if cls.__name__ == 'Square':
+            instance = cls(1, 0)
+        else:
+            instance = cls(1, 1)
         instance.update(**dictionary)
         return instance
