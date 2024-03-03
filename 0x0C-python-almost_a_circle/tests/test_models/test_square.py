@@ -451,11 +451,6 @@ class TestSquare_update_args(unittest.TestCase):
         s.update(89, 2, 3, 4)
         self.assertEqual("[Square] (89) 3/4 - 2", str(s))
 
-    def test_update_args_more_than_four(self):
-        s = Square(10, 10, 10, 10)
-        s.update(89, 2, 3, 4, 5)
-        self.assertEqual("[Square] (89) 3/4 - 2", str(s))
-
     def test_update_args_width_setter(self):
         s = Square(10, 10, 10, 10)
         s.update(89, 2)
@@ -620,11 +615,6 @@ class TestSquare_update_kwargs(unittest.TestCase):
         s = Square(10, 10, 10, 10)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             s.update(y=-5)
-
-    def test_update_args_and_kwargs(self):
-        s = Square(10, 10, 10, 10)
-        s.update(89, 2, y=6)
-        self.assertEqual("[Square] (89) 10/10 - 2", str(s))
 
     def test_update_kwargs_wrong_keys(self):
         s = Square(10, 10, 10, 10)

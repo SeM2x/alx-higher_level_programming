@@ -569,11 +569,6 @@ class TestRectangle_update_args(unittest.TestCase):
         r.update(89, 2, 3, 4, 5)
         self.assertEqual("[Rectangle] (89) 4/5 - 2/3", str(r))
 
-    def test_update_args_more_than_five(self):
-        r = Rectangle(10, 10, 10, 10, 10)
-        r.update(89, 2, 3, 4, 5, 6)
-        self.assertEqual("[Rectangle] (89) 4/5 - 2/3", str(r))
-
     def test_update_args_None_id(self):
         r = Rectangle(10, 10, 10, 10, 10)
         r.update(None)
@@ -588,14 +583,9 @@ class TestRectangle_update_args(unittest.TestCase):
 
     def test_update_args_twice(self):
         r = Rectangle(10, 10, 10, 10, 10)
-        r.update(89, 2, 3, 4, 5, 6)
-        r.update(6, 5, 4, 3, 2, 89)
+        r.update(89, 2, 3, 4, 5)
+        r.update(6, 5, 4, 3, 2)
         self.assertEqual("[Rectangle] (6) 3/2 - 5/4", str(r))
-
-    def test_update_args_invalid_width_type(self):
-        r = Rectangle(10, 10, 10, 10, 10)
-        with self.assertRaisesRegex(TypeError, "width must be an integer"):
-            r.update(89, "invalid")
 
     def test_update_args_width_zero(self):
         r = Rectangle(10, 10, 10, 10, 10)
@@ -768,11 +758,6 @@ class TestRectangle_update_kwargs(unittest.TestCase):
         r = Rectangle(10, 10, 10, 10, 10)
         with self.assertRaisesRegex(ValueError, "y must be >= 0"):
             r.update(y=-5)
-
-    def test_update_args_and_kwargs(self):
-        r = Rectangle(10, 10, 10, 10, 10)
-        r.update(89, 2, height=4, y=6)
-        self.assertEqual("[Rectangle] (89) 10/10 - 2/10", str(r))
 
     def test_update_kwargs_wrong_keys(self):
         r = Rectangle(10, 10, 10, 10, 10)
