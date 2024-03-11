@@ -9,7 +9,7 @@ if (args.length < 2) {
       max = element;
     }
   });
-  args = args.filter(element => element != max);
+  args = args.filter(element => element !== max);
   max = args[0];
   args.forEach(element => {
     if (element > max) {
