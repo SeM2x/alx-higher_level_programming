@@ -1,5 +1,5 @@
 #!/usr/bin/node
-const factorial = (x) => {
+function factorial(x) {
   if (!x) {
     return 1;
   }
