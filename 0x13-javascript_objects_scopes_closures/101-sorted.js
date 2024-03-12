@@ -7,6 +7,6 @@ Object.values(dict).forEach((val, index) => {
 });
 Object.entries(newDict).forEach(([key, val]) => {
   newDict[key] = val.replace('undefined ', '').split(' ');
-})
+});
 
 console.log(newDict);
