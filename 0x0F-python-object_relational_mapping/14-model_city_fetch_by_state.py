@@ -15,8 +15,8 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    query = session.query(City).join(
-        State, onclause=City.state_id == State.id).order_by(City.id).all()
+    query = session.query(State, City).join(
+        City, State.id, City.state_id).order_by(City.id).all()
 
     for column in query:
         print(column)
