@@ -10,4 +10,4 @@ class State(Base):
     __tablename__ = 'states'
 
     id = Column('id', Integer, primary_key=True, autoincrement='auto')
-    name = Column('name', String, nullable=False)
+    name = Column('name', String(128), nullable=False)
