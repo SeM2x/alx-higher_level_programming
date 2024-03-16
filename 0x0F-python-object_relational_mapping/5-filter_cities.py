@@ -19,7 +19,7 @@ if (__name__ == '__main__'):
             WHERE states.name LIKE BINARY %s ORDER BY cities.id ASC",
                 (argv[4],))
     query_rows = cur.fetchall()
-    for i, row  in enumerate(query_rows):
+    for i, row in enumerate(query_rows):
         if i != len(query_rows) - 1:
             print(row[0], end=', ')
         else:
