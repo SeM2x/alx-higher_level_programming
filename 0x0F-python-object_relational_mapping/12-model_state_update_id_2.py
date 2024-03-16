@@ -15,8 +15,8 @@ if __name__ == "__main__":
     session = Session()
 
     state_id = 2
-    state = session.query(State).get(state_id)
+    state = session.get(State, state_id)
     if state is not None:
-        state.id = 'New Mexico'
+        state.name = 'New Mexico'
         session.commit()
     session.close()
