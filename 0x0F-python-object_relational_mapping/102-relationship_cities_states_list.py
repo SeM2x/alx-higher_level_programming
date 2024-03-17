@@ -18,7 +18,7 @@ if __name__ == '__main__':
     session = Session()
 
     query = session.query(State, City).join(State).order_by(City.id).all()
-    
+
     for state, city in query:
         if city in state.cities:
             print(f'{city.id}: {city.name} -> {state.name}')
