@@ -26,3 +26,4 @@ if __name__ == '__main__':
     session.add(newState)
     session.add(newCity)
     session.commit()
+    session.close()
