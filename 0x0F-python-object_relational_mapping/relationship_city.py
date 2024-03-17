@@ -2,7 +2,6 @@
 """defines a City class"""
 from relationship_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
-from sqlalchemy.orm import declarative_base, relationship
 
 
 class City(Base):

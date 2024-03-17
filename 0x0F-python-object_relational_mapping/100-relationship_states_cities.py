@@ -2,8 +2,8 @@
 """ creates the State "California" with the City "San Francisco"
 from the database hbtn_0e_100_usa"""
 import sys
-from relationship_city import City
 from relationship_state import Base, State
+from relationship_city import City
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker
 
