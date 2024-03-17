@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """defines a City class"""
+from relationship_state import Base
 from sqlalchemy import Column, String, Integer, ForeignKey
 from sqlalchemy.orm import declarative_base, relationship
-Base = declarative_base()
 
 
 class City(Base):
@@ -13,4 +13,3 @@ class City(Base):
     name = Column('name', String(128), nullable=False)
     state_id = Column('state_id', Integer, ForeignKey(
         'states.id'), nullable=False)
-    state = relationship('State', back_populates='cities')
