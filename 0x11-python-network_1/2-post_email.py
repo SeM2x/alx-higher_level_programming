@@ -13,5 +13,5 @@ if __name__ == "__main__":
         'email': email
     }).encode('utf-8')
 
-    response = urllib.request.urlopen(url, data=data)
-    print(response.read().decode('utf-8'))
+    with urllib.request.urlopen(url, data=data) as res:
+        print(res.read().decode('utf-8'))
