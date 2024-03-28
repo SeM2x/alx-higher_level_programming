@@ -9,10 +9,8 @@ if __name__ == "__main__":
     repo = sys.argv[1]
     owner = sys.argv[2]
 
-    res = requests.get(
-        url=f"https://api.github.com/repos/{owner}/{repo}/commits")
+    res = requests.get(url=f"https://api.github.com/repos/{owner}/{repo}/commits")
 
-    commits = res.json()
+    commits = sorted(res.json(), key=lambda x: x.get('commit').get('committer').get('date'), reverse=True)[:10]
     for commit in commits:
-        print(f"{commit.get('sha')}: {commit.get(
-            'commit').get('author').get('name')}")
+        print(f"{commit.get('sha')}: {commit.get('commit').get('author').get('name')}")
