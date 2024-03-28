@@ -7,4 +7,4 @@ import sys
 
 url = sys.argv[1]
 with urllib.request.urlopen(url) as res:
-    print(res.headers.get('X-Request-Id'))
+    print(dict(res.headers).get('X-Request-Id'))
