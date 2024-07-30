@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const request = require('request');
 const api = 'https://swapi-api.alx-tools.com/api';
-const url = process.argv[2]
+const url = process.argv[2];
 request(url, (error, response, body) => {
   if (error) {
     console.error(error);
@@ -13,6 +13,6 @@ request(url, (error, response, body) => {
       }
       return count;
     }, 0);
-    console.log(count);
+    if (count !== undefined) { console.log(count); } else { console.log(0); }
   }
 });
