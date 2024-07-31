@@ -6,13 +6,13 @@ request(url, (error, response, body) => {
   if (!error) {
     const characters = JSON.parse(response.body).characters;
     const res = [];
-    characters.forEach(character => {
-      request(character, (error, response, body) => {
+    characters.forEach(characterUrl => {
+      request(characterUrl, (error, response, body) => {
         if (!error) {
-          const result = JSON.parse(response.body);
-          const index = result.url.substring(0, result.url.length - 1).substring(result.url.length - 3);
+          const character = JSON.parse(response.body);
+          const index = character.url.substring(0, character.url.length - 1).substring(character.url.length - 3);
           res.push({
-            name: result.name,
+            name: character.name,
             index: index.startsWith('/') ? +index.substring(1) : +index
           });
           if (characters.length === res.length) {
