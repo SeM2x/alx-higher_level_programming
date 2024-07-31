@@ -13,10 +13,10 @@ request(url, (error, response, body) => {
           const index = result.url.substring(0, result.url.length - 1).substring(result.url.length - 3);
           res.push({
             name: result.name,
-            index: index.startsWith('/') ? index.substring(1) : index
+            index: index.startsWith('/') ? +index.substring(1) : +index
           });
           if (characters.length === res.length) {
-            res.sort((a, b) => Number(a.index) - Number(b.index));
+            res.sort((a, b) => a.index - b.index);
             res.forEach(char => console.log(char.name));
           }
         }
